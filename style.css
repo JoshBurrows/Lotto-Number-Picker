@@ -1,0 +1,89 @@
+body {
+  background: rgb(9, 30, 44);
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00bd68;
+  text-align: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #000;
+  height: 50vh;
+}
+.ball.pball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  width: 4.5rem;
+  /* width: 100px; */
+  height: 4.5rem;
+  /* height: 100px; */
+  background: red;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(25px 25px, circle, red, #000);
+  background: -moz-radial-gradient(25px 25px, circle, red, #000);
+  background: radial-gradient(25px 25px, circle, red, #000);
+}
+.ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 4.5rem;
+  /* width: 100px; */
+  height: 4.5rem;
+  /* height: 100px; */
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  background: -webkit-radial-gradient(
+    25px 25px,
+    circle,
+    rgb(255, 255, 255),
+    #000
+  );
+  background: -moz-radial-gradient(25px 25px, circle, rgb(255, 255, 255), #000);
+  background: radial-gradient(25px 25px, circle, rgb(255, 255, 255), #000);
+}
+
+/* BUTTON CSS  */
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+}
+.button-41 {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #00d775, #00bd68);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  height: 44px;
+  line-height: 44px;
+  outline: 0;
+  padding: 0 20px;
+  pointer-events: auto;
+  text-align: center;
+  align-self: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+  width: 50%;
+  border: 0;
+}
+
+.button-41:hover {
+  background: #00bd68;
+}
