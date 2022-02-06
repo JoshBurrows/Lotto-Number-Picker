@@ -9,7 +9,7 @@ const clicked = () => {
   /*uses numbers array to create a new array without duplicate numbers if any. */
   let displayNumbers = [...new Set(numbers)];
   if (displayNumbers.length != numbers.length) {
-    displayNumbers.splice(0, 0, randomBall(69));
+    displayNumbers.splice(displayNumbers.length - 1, 0, randomBall(69));
     /* console.log(
        `${displayNumbers[displayNumbers.length - 1]} pushed to newNumbers`
      ); */
