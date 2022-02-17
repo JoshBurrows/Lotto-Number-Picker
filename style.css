@@ -1,46 +1,36 @@
 * {
-  margin: 0;
-  padding: 0;
+  font-family: "Chango", cursive;
 }
-.heading {
-  background-color: black;
-  color: white;
-  font-family: sans-serif;
-  height: 4em;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex-direction: column;
-  background-color: crimson;
-  height: 95vh;
+#ballSection {
   width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
 }
-.hero-container {
+.bgImage {
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.ballContainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: white;
-  width: 75%;
-  height: 15em;
-  border-radius: 5px;
-  box-shadow: 10px 5px 5px black;
+  justify-content: space-around;
+  height: 100%;
+  position: relative;
 }
-
 .pball.ball {
+  font-size: larger;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   background: crimson;
   border-radius: 50%;
   background: -webkit-radial-gradient(25px 25px, circle, crimson, #000);
@@ -49,13 +39,14 @@
 }
 
 .ball {
+  font-size: larger;
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgb(0, 0, 0);
   text-align: center;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   background: rgb(255, 255, 255);
   border-radius: 50%;
   background: -webkit-radial-gradient(
@@ -67,5 +58,3 @@
   background: -moz-radial-gradient(25px 25px, circle, rgb(255, 255, 255), #000);
   background: radial-gradient(25px 25px, circle, rgb(255, 255, 255), #000);
 }
-
-/* BUTTON CSS  */
