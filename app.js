@@ -11,7 +11,7 @@ const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
 const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
 const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
 
-// Get elements to display saved numbers
+// Get elements that i'll appendChild to display "saved numbers"
 const myNums = document.querySelector(".myNums");
 
 /* Function that creates random number, takes paramenter for max number, for each games maximun number allowed to be played */
@@ -73,7 +73,7 @@ function savePwrBallsClick() {
   let p = document.createElement("p");
   p.innerText = `My Power Ball numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  console.log(myNumsDisplay);
+  // console.log(myNumsDisplay);
 }
 
 function saveP6BallsClick() {
@@ -84,7 +84,7 @@ function saveP6BallsClick() {
   let p = document.createElement("p");
   p.innerText = `My pick 6 numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  console.log(myNumsDisplay);
+  // console.log(myNumsDisplay);
 }
 
 function saveP3BallsClick() {
@@ -95,7 +95,7 @@ function saveP3BallsClick() {
   let p = document.createElement("p");
   p.innerText = `My pick 3 numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  console.log(myNumsDisplay);
+  // console.log(myNumsDisplay);
 }
 
 // Add event listener and callback functions for each button
