@@ -54,6 +54,11 @@ nav > .container > a {
 .btn {
   margin: 0px 5px;
 }
+.myNums > p {
+  background-color: rgb(192, 192, 192);
+  margin: 0;
+  padding: 10px;
+}
 
 .pball.ball {
   font-size: larger;

@@ -7,7 +7,12 @@ const p3Balls = document.querySelectorAll(".p3Ball");
 const pwrBallsBtn = document.querySelector("button.getPwrBalls");
 const p6BallsBtn = document.querySelector("button.getP6Balls");
 const p3BallsBtn = document.querySelector("button.getP3Balls");
-const saveBtn = document.querySelectorAll("button.saveNumbers");
+const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
+const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
+const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
+
+// Get elements to display saved numbers
+const myNums = document.querySelector(".myNums");
 
 /* Function that creates random number, takes paramenter for max number, for each games maximun number allowed to be played */
 const randomBall = (maxNum) => Math.floor(Math.random() * maxNum) + 1;
@@ -60,7 +65,43 @@ function getP3BallsClick() {
   }
 }
 
-// Add event listener and call getNums with games determined "num" value
+function savePwrBallsClick() {
+  let myNumsDisplay = [];
+  for (const ball of pwrBalls) {
+    myNumsDisplay.push(ball.innerText);
+  }
+  let p = document.createElement("p");
+  p.innerText = `My Power Ball numbers: ${myNumsDisplay.join(", ")}`;
+  myNums.appendChild(p);
+  console.log(myNumsDisplay);
+}
+
+function saveP6BallsClick() {
+  let myNumsDisplay = [];
+  for (const ball of p6Balls) {
+    myNumsDisplay.push(ball.innerText);
+  }
+  let p = document.createElement("p");
+  p.innerText = `My pick 6 numbers: ${myNumsDisplay.join(", ")}`;
+  myNums.appendChild(p);
+  console.log(myNumsDisplay);
+}
+
+function saveP3BallsClick() {
+  let myNumsDisplay = [];
+  for (const ball of p3Balls) {
+    myNumsDisplay.push(ball.innerText);
+  }
+  let p = document.createElement("p");
+  p.innerText = `My pick 3 numbers: ${myNumsDisplay.join(", ")}`;
+  myNums.appendChild(p);
+  console.log(myNumsDisplay);
+}
+
+// Add event listener and callback functions for each button
 pwrBallsBtn.addEventListener("click", getPwrBallsClick);
 p6BallsBtn.addEventListener("click", getP6BallsClick);
 p3BallsBtn.addEventListener("click", getP3BallsClick);
+savePwrBallsBtn.addEventListener("click", savePwrBallsClick);
+saveP6BallsBtn.addEventListener("click", saveP6BallsClick);
+saveP3BallsBtn.addEventListener("click", saveP3BallsClick);
