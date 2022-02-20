@@ -6,6 +6,7 @@ nav > .logoContainer {
 }
 nav > .logoContainer > a {
   text-decoration: none;
+  border-radius: 5px;
 }
 nav > .container > a {
   text-decoration: none;
