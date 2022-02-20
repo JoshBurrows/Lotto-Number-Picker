@@ -73,7 +73,6 @@ function savePwrBallsClick() {
   let p = document.createElement("p");
   p.innerText = `My Power Ball numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  // console.log(myNumsDisplay);
 }
 
 function saveP6BallsClick() {
@@ -84,7 +83,6 @@ function saveP6BallsClick() {
   let p = document.createElement("p");
   p.innerText = `My pick 6 numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  // console.log(myNumsDisplay);
 }
 
 function saveP3BallsClick() {
@@ -95,7 +93,6 @@ function saveP3BallsClick() {
   let p = document.createElement("p");
   p.innerText = `My pick 3 numbers: ${myNumsDisplay.join(", ")}`;
   myNums.appendChild(p);
-  // console.log(myNumsDisplay);
 }
 
 // Add event listener and callback functions for each button
