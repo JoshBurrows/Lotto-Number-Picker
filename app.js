@@ -1,8 +1,7 @@
 // omg this all needs refactoring or junked or fixed or something!! This is out of control
+
+// get all the sections and targeted elements
 const loginSection = document.querySelector(".user");
-const navLoginButton = document.querySelector(".navLoginBtn");
-const formSignin = document.querySelector(".form-signin");
-const formSigninBtn = document.querySelector("#formSigninBtn");
 loginSection.style.display = "none";
 const welcomeSection = document.querySelector("#welcome");
 const gameSection = document.querySelector("#gameSection");
@@ -10,21 +9,30 @@ gameSection.style.display = "none";
 const numbersSection = document.querySelector("#myNumbers");
 numbersSection.style.display = "none";
 const greeting = document.querySelector("#greeting");
+const myNums = document.querySelector(".myNums");
+const formSignin = document.querySelector(".form-signin");
+
+// get all the buttons
+const loginButton = document.querySelector(".loginBtn");
 const navGameBtn = document.querySelector(".navGameBtn");
 const navNumsBtn = document.querySelector(".navNumsBtn");
-const pwrBalls = document.querySelectorAll(".pwrBall");
-const p6Balls = document.querySelectorAll(".p6Ball");
-const p3Balls = document.querySelectorAll(".p3Ball");
+const formSigninBtn = document.querySelector("#formSigninBtn");
 const pwrBallsBtn = document.querySelector("button.getPwrBalls");
 const p6BallsBtn = document.querySelector("button.getP6Balls");
 const p3BallsBtn = document.querySelector("button.getP3Balls");
 const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
 const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
 const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
-const myNums = document.querySelector(".myNums");
+const pwrBalls = document.querySelectorAll(".pwrBall");
+const p6Balls = document.querySelectorAll(".p6Ball");
+const p3Balls = document.querySelectorAll(".p3Ball");
+
+// Function for creating random numbers from 0-maxNum
 const randomBall = (maxNum) => Math.floor(Math.random() * maxNum) + 1;
+
 /* Empty numbers array ill use for sorting and also removing repeating values, if any occur */
 const numbers = [];
+
 // Function that adds random numbers generated to numbers array
 function getNums(arr, num) {
   for (let i = 0; i < arr.length; i++) {
@@ -32,13 +40,29 @@ function getNums(arr, num) {
   }
 }
 
+// Navbar Buttons....I need to clean this up too. its a mess
 navGameBtn.addEventListener("click", function () {
   if (gameSection.style.display === "none") {
     gameSection.style.display = "";
+    welcomeSection.style.display = "none";
+    numbersSection.style.display = "none";
+    loginSection.style.display = "none";
+    greeting.innerText = `Hello ${sessionStorage.getItem(
+      "username"
+    )}, Lets pick your numbers`;
   }
 });
 
-navLoginButton.addEventListener("click", function (e) {
+navNumsBtn.addEventListener("click", function () {
+  if (numbersSection.style.display === "none") {
+    numbersSection.style.display = "";
+    gameSection.style.display = "none";
+    welcomeSection.style.display = "none";
+    loginSection.style.display = "none";
+  }
+});
+
+loginButton.addEventListener("click", function (e) {
   e.preventDefault();
   if (loginSection.style.display === "none") {
     loginSection.style.display = "";
@@ -156,5 +180,9 @@ myNumbersBtn.addEventListener("click", function () {
 });
 
 clearNumbersBtn.addEventListener("click", function () {
-  alert("Im sorry this isnt working yet");
+  if (myNums.hasChildNodes()) {
+    myNums.removeChild(myNums.lastChild);
+  } else {
+    alert("You havent saved any numbers");
+  }
 });
