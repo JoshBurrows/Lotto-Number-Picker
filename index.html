@@ -20,7 +20,7 @@
   <body>
     <main>
       <header class="bg-primary text-white">
-        <h1 class="container-fluid text-center">Pick your winning numbers!</h1>
+        <h3 class="text-center">Lets Play!</h3>
         <nav class="navbar bg-dark">
           <div class="logoContainer container">
             <a class="text-dark bg-white" href="http://www.joshuaburrows.com"
@@ -28,19 +28,56 @@
             >
           </div>
           <div class="container">
-            <a href="#gameSection">Games</a>
-            <a href="#myNumbers">My Numbers</a>
-            <a
-              style="cursor: pointer"
-              onclick="alert('This feature is not available yet')"
-              >Login</a
-            >
+            <a class="navGameBtn" href="#gameSection">Games</a>
+            <a class="navNumsBtn" href="#myNumbers">My Numbers</a>
           </div>
         </nav>
       </header>
+      <section id="welcome">
+        <h1>Welcome</h1>
+        <p>Lets get started</p>
+        <button class="btn btn-primary navLoginBtn">Login</button>
+      </section>
+      <section class="user">
+        <div class="wrapper">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Create user</h2>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="Password"
+            />
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                value="remember-me"
+                id="rememberMe"
+                name="rememberMe"
+              />
+              Remember me
+            </label>
+            <button
+              id="formSigninBtn"
+              class="btn btn-lg btn-primary btn-block"
+              type="submit"
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+      </section>
       <section id="gameSection">
+        <h1 id="greeting">Hello</h1>
         <div class="gameContainer">
-          <h1>Powerball Picker</h1>
+          <h2>Powerball</h2>
           <p>Last drawing numbers</p>
           <sub>This feature will be added in the future</sub>
           <hr />
@@ -60,7 +97,7 @@
           </div>
         </div>
         <div class="gameContainer">
-          <h1>Pick Six</h1>
+          <h2>Pick Six</h2>
           <p>Last drawing numbers</p>
           <sub>This feature will be added in the future</sub>
           <hr />
@@ -79,7 +116,7 @@
           </div>
         </div>
         <div class="gameContainer">
-          <h1>Pick three</h1>
+          <h2>Pick three</h2>
           <p>Last drawing numbers</p>
           <sub>This feature will be added in the future</sub>
           <hr />
@@ -94,11 +131,18 @@
             ><button class="saveP3Balls btn btn-primary">Save Numbers</button>
           </div>
         </div>
+        <div
+          class="container-fluid d-flex align-items-center justify-content-center my-5"
+        >
+          <button class="myNumbersBtn btn btn-lg btn-primary">
+            View My Numbers
+          </button>
+        </div>
       </section>
-      <hr />
       <section id="myNumbers">
         <h1>My Numbers</h1>
         <p class="myNums">Here are your saved numbers</p>
+        <button class="clearNumbersBtn btn btn-danger">Clear Numbers</button>
       </section>
     </main>
     <script src="app.js"></script>

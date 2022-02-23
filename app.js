@@ -1,32 +1,72 @@
-// Get ball elements for each game
+// omg this all needs refactoring or junked or fixed or something!! This is out of control
+const loginSection = document.querySelector(".user");
+const navLoginButton = document.querySelector(".navLoginBtn");
+const formSignin = document.querySelector(".form-signin");
+const formSigninBtn = document.querySelector("#formSigninBtn");
+loginSection.style.display = "none";
+const welcomeSection = document.querySelector("#welcome");
+const gameSection = document.querySelector("#gameSection");
+gameSection.style.display = "none";
+const numbersSection = document.querySelector("#myNumbers");
+numbersSection.style.display = "none";
+const greeting = document.querySelector("#greeting");
+const navGameBtn = document.querySelector(".navGameBtn");
+const navNumsBtn = document.querySelector(".navNumsBtn");
 const pwrBalls = document.querySelectorAll(".pwrBall");
 const p6Balls = document.querySelectorAll(".p6Ball");
 const p3Balls = document.querySelectorAll(".p3Ball");
-
-// Get the button elements for each game
 const pwrBallsBtn = document.querySelector("button.getPwrBalls");
 const p6BallsBtn = document.querySelector("button.getP6Balls");
 const p3BallsBtn = document.querySelector("button.getP3Balls");
 const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
 const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
 const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
-
-// Get elements that i'll appendChild to display "saved numbers"
 const myNums = document.querySelector(".myNums");
-
-/* Function that creates random number, takes paramenter for max number, for each games maximun number allowed to be played */
 const randomBall = (maxNum) => Math.floor(Math.random() * maxNum) + 1;
-
 /* Empty numbers array ill use for sorting and also removing repeating values, if any occur */
 const numbers = [];
-
 // Function that adds random numbers generated to numbers array
 function getNums(arr, num) {
   for (let i = 0; i < arr.length; i++) {
     numbers[i] = randomBall(num);
   }
 }
-// Callback functions to be called on button clicks for games
+
+navGameBtn.addEventListener("click", function () {
+  if (gameSection.style.display === "none") {
+    gameSection.style.display = "";
+  }
+});
+
+navLoginButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (loginSection.style.display === "none") {
+    loginSection.style.display = "";
+    welcomeSection.style.display = "none";
+  } else {
+    loginSection.style.display = "none";
+  }
+});
+
+formSigninBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  let username = formSignin.username.value;
+  let password = formSignin.password.value;
+  sessionStorage.setItem("username", username);
+  sessionStorage.setItem("password", password);
+  if (loginSection.style.display === "none") {
+    loginSection.style.display = "";
+  } else {
+    loginSection.style.display = "none";
+  }
+  gameSection.style.display = "";
+  greeting.innerText = `Hello ${sessionStorage.getItem(
+    "username"
+  )}, Lets pick your numbers`;
+});
+
+/* Callback functions to be called on button clicks for games
+ ***I need to rewrite all this***. */
 function getPwrBallsClick() {
   getNums(pwrBalls, 69);
   let displayNumbers = [...new Set(numbers)];
@@ -102,3 +142,19 @@ p3BallsBtn.addEventListener("click", getP3BallsClick);
 savePwrBallsBtn.addEventListener("click", savePwrBallsClick);
 saveP6BallsBtn.addEventListener("click", saveP6BallsClick);
 saveP3BallsBtn.addEventListener("click", saveP3BallsClick);
+
+// My Numbers Section
+const myNumbersBtn = document.querySelector(".myNumbersBtn");
+const clearNumbersBtn = document.querySelector(".clearNumbersBtn");
+myNumbersBtn.addEventListener("click", function () {
+  if (gameSection.style.display === "") {
+    gameSection.style.display = "none";
+    numbersSection.style.display = "";
+  } else {
+    gameSection.style.display = "";
+  }
+});
+
+clearNumbersBtn.addEventListener("click", function () {
+  alert("Im sorry this isnt working yet");
+});

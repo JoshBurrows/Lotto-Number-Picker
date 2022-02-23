@@ -1,6 +1,11 @@
 * {
   font-family: "Chango", cursive;
 }
+
+body {
+  background: #eee !important;
+}
+/* Nav section CSS */
 nav > .logoContainer {
   width: 10%;
 }
@@ -14,6 +19,65 @@ nav > .container > a {
   color: white;
 }
 
+/* Login Form CSS */
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-signin-heading,
+.checkbox {
+  margin-bottom: 30px;
+}
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Welcome section CSS */
+#greeting {
+  width: 100%;
+  text-align: center;
+}
+
+#welcome {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+  padding: 10px;
+  justify-content: center;
+}
+
+#myNumbers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Games CSS */
 #gameSection {
   display: flex;
   flex-direction: row;
@@ -23,13 +87,14 @@ nav > .container > a {
 }
 .gameContainer {
   width: 20rem;
-  height: auto;
+  height: 400px;
   padding: 1rem;
   border: 1px solid #9c9c9c;
+  background-color: white;
   border-radius: 10px;
   margin: 20px;
   padding: 1rem;
-  box-shadow: -15px 15px 25px -5px;
+  box-shadow: -1px 5px 5px -1px;
 }
 sub {
   color: red;
