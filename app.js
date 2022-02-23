@@ -1,4 +1,4 @@
-// omg this all needs refactoring or junked or fixed or something!! This is out of control
+// omg this all needs refactoring or junked or fixed or something!! T
 
 // get all the sections and targeted elements
 const loginSection = document.querySelector(".user");
@@ -11,6 +11,9 @@ numbersSection.style.display = "none";
 const greeting = document.querySelector("#greeting");
 const myNums = document.querySelector(".myNums");
 const formSignin = document.querySelector(".form-signin");
+const pwrBalls = document.querySelectorAll(".pwrBall");
+const p6Balls = document.querySelectorAll(".p6Ball");
+const p3Balls = document.querySelectorAll(".p3Ball");
 
 // get all the buttons
 const loginButton = document.querySelector(".loginBtn");
@@ -23,9 +26,9 @@ const p3BallsBtn = document.querySelector("button.getP3Balls");
 const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
 const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
 const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
-const pwrBalls = document.querySelectorAll(".pwrBall");
-const p6Balls = document.querySelectorAll(".p6Ball");
-const p3Balls = document.querySelectorAll(".p3Ball");
+
+const myNumbersBtn = document.querySelector(".myNumbersBtn");
+const clearNumbersBtn = document.querySelector(".clearNumbersBtn");
 
 // Function for creating random numbers from 0-maxNum
 const randomBall = (maxNum) => Math.floor(Math.random() * maxNum) + 1;
@@ -40,7 +43,7 @@ function getNums(arr, num) {
   }
 }
 
-// Navbar Buttons....I need to clean this up too. its a mess
+// Navbar Buttons....?
 navGameBtn.addEventListener("click", function () {
   if (gameSection.style.display === "none") {
     gameSection.style.display = "";
@@ -89,8 +92,7 @@ formSigninBtn.addEventListener("click", function (e) {
   )}, Lets pick your numbers`;
 });
 
-/* Callback functions to be called on button clicks for games
- ***I need to rewrite all this***. */
+// functions to call on button clicks.
 function getPwrBallsClick() {
   getNums(pwrBalls, 69);
   let displayNumbers = [...new Set(numbers)];
@@ -159,7 +161,7 @@ function saveP3BallsClick() {
   myNums.appendChild(p);
 }
 
-// Add event listener and callback functions for each button
+// Add event listener and callback functions for "get numbers" button
 pwrBallsBtn.addEventListener("click", getPwrBallsClick);
 p6BallsBtn.addEventListener("click", getP6BallsClick);
 p3BallsBtn.addEventListener("click", getP3BallsClick);
@@ -168,8 +170,6 @@ saveP6BallsBtn.addEventListener("click", saveP6BallsClick);
 saveP3BallsBtn.addEventListener("click", saveP3BallsClick);
 
 // My Numbers Section
-const myNumbersBtn = document.querySelector(".myNumbersBtn");
-const clearNumbersBtn = document.querySelector(".clearNumbersBtn");
 myNumbersBtn.addEventListener("click", function () {
   if (gameSection.style.display === "") {
     gameSection.style.display = "none";
@@ -183,6 +183,6 @@ clearNumbersBtn.addEventListener("click", function () {
   if (myNums.hasChildNodes()) {
     myNums.removeChild(myNums.lastChild);
   } else {
-    alert("You havent saved any numbers");
+    alert("You dont have any saved numbers");
   }
 });
