@@ -26,7 +26,6 @@ const p3BallsBtn = document.querySelector("button.getP3Balls");
 const savePwrBallsBtn = document.querySelector("button.savePwrBalls");
 const saveP6BallsBtn = document.querySelector("button.saveP6Balls");
 const saveP3BallsBtn = document.querySelector("button.saveP3Balls");
-
 const myNumbersBtn = document.querySelector(".myNumbersBtn");
 const clearNumbersBtn = document.querySelector(".clearNumbersBtn");
 
